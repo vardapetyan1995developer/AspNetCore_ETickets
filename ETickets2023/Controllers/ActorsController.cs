@@ -14,9 +14,9 @@ namespace ETickets2023.Controllers
 
         public IActionResult Index()
         {
-            var allActors = _context.Actors.ToList();
+            var data = _context.Actors.ToList();
 
-            return View ();
+            return View (data);
         }
     }
 }
