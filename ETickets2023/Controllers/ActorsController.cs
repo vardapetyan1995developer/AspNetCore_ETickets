@@ -1,20 +1,21 @@
 ﻿using ETickets2023.Data;
+using ETickets2023.Data.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ETickets2023.Controllers
 {
     public class ActorsController : Controller
     {
-        private readonly AppDbContext _context;
+        private readonly IActorsService _service;
 
-        public ActorsController(AppDbContext context)
+        public ActorsController(IActorsService service)
         {
-            _context = context;
+            _service = service;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            var data = _context.Actors.ToList();
+            var data = await _service.GetAll();
 
             return View (data);
         }
