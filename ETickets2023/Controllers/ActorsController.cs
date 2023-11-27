@@ -19,5 +19,10 @@ namespace ETickets2023.Controllers
 
             return View (data);
         }
+
+        public IActionResult Create() 
+        {
+            return View();
+        }
     }
 }
