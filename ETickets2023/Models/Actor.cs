@@ -1,8 +1,9 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using ETickets2023.Data.Base;
+using System.ComponentModel.DataAnnotations;
 
 namespace ETickets2023.Models
 {
-    public class Actor
+    public class Actor : IEntityBase
     {
         [Key]
         public int Id { get; set; }
