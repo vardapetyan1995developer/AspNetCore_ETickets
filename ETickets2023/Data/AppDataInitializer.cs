@@ -72,29 +72,29 @@ namespace ETickets2023.Data
 
                         new Actor()
                         {
-                            FullName = "Actor 2",
-                            Bio = "This is the bio of the second actor",
+                            FullName = "Ervis Trupja",
+                            Bio = "Lorem ipsum dolor sit amet",
                             ProfilePictureUrl = "http://dotnethow.net/images/actors/actor-2.jpeg",
                         },
 
                         new Actor()
                         {
-                            FullName = "Actor 3",
-                            Bio = "This is the bio of the second actor",
+                            FullName = "Angelina Jolie",
+                            Bio = "Lorem ipsum dolor sit amet",
                             ProfilePictureUrl = "http://dotnethow.net/images/actors/actor-3.jpeg",
                         },
 
                         new Actor()
                         {
-                            FullName = "Actor 4",
-                            Bio = "This is the bio of the second actor",
+                            FullName = "Jim Carrey",
+                            Bio = "Lorem ipsum dolor sit amet",
                             ProfilePictureUrl = "http://dotnethow.net/images/actors/actor-4.jpeg",
                         },
 
                         new Actor()
                         {
-                            FullName = "Actor 5",
-                            Bio = "This is the bio of the second actor",
+                            FullName = "Will Smith",
+                            Bio = "Lorem ipsum dolor sit amet",
                             ProfilePictureUrl = "http://dotnethow.net/images/actors/actor-5.jpeg",
                         },
                     });
