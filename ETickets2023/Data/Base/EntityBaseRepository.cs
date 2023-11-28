@@ -1,5 +1,6 @@
 ﻿using ETickets2023.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
 
 namespace ETickets2023.Data.Base
 {
@@ -14,9 +15,13 @@ namespace ETickets2023.Data.Base
 
         public async Task AddAsync(T entity) => await _context.Set<T>().AddAsync(entity);
 
-        public Task DeleteAsync(int id)
+        public async Task DeleteAsync(int id)
         {
-            throw new NotImplementedException();
+            var entity = await _context.Set<T>().FirstOrDefaultAsync(n => n.Id == id);
+            EntityEntry entityEntry = _context.Entry<T>(entity);
+            entityEntry.State = EntityState.Deleted;
+
+            await _context.SaveChangesAsync();
         }
 
         public async Task<IEnumerable<T>> GetAllAsync() => await _context.Set<T>().ToListAsync();
@@ -24,9 +29,11 @@ namespace ETickets2023.Data.Base
         public async Task<T> GetByIdAsync(int id) => await _context.Set<T>().FirstOrDefaultAsync(n => n.Id == id);
 
 
-        public Task<T> UpdateAsync(int id, T entity)
+        public async Task UpdateAsync(int id, T entity)
         {
-            throw new NotImplementedException();
+            EntityEntry entityEntry = _context.Entry<T>(entity);
+
+            entityEntry.State = EntityState.Modified;
         }
     }
 }
